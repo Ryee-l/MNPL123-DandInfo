@@ -12,7 +12,7 @@ public class FacilityDAO {
         try{
             Connection conn=JDBCTool.getConnection();
             Statement st=conn.createStatement();
-            ResultSet rs=st.executeQuery("SELECT * FROM Facility WHERE number="+num+" AND name="+n);
+            ResultSet rs=st.executeQuery("SELECT * FROM 'Facility' WHERE ('number'='"+num+"') AND( 'name'='"+n+"')");
 
             while(rs.next()){
                 int number=rs.getInt("number");
@@ -60,7 +60,7 @@ public class FacilityDAO {
         try{
             Connection conn=JDBCTool.getConnection();
             Statement st=conn.createStatement();
-            ResultSet rs=st.executeQuery("DELETE FROM Facility WHERE number="+num);
+            ResultSet rs=st.executeQuery("DELETE FROM 'Facility' WHERE ('number'='"+num+"')");
 
             rs.close();
             st.close();
@@ -102,7 +102,7 @@ public class FacilityDAO {
             Connection conn=JDBCTool.getConnection();
             Statement st=conn.createStatement();
             for(int i=0;i<12;i++){
-                st.executeQuery("INSERT INTO Facility VALUES ("+f.getNumber()+",'"+f.getName()+"','"+f.getFee()+"','"+f.getTime()[i]+")");
+                st.executeQuery("INSERT INTO 'Facility' VALUES ("+f.getNumber()+",'"+f.getName()+"','"+f.getFee()+"','"+f.getTime()[i]+")");
             }
 
             st.close();
