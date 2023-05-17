@@ -17,11 +17,11 @@ public class VenueDAO {
             statement.setString(2, venue.getName());
 
             statement.executeUpdate();
-
             statement.close();
             conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+    //
 }
