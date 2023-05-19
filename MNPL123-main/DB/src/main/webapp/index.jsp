@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>DBProject</title>
@@ -40,7 +40,6 @@
     </style>
 </head>
 <body>
-<%--表单,action是提交的地址,method是数据传输方式 --%>
     <form action="doLogin.jsp" method="post" id="myForm">
         <h3 class="text-center">Welcome to the venue booking system</h3>
         <div class="form-group">
@@ -51,11 +50,11 @@
         </div>
         <div class="btn-group">
             <button type="submit" class="btn btn-primary">log in</button>
-            <button type="button" class="btn btn-danger" οnclick='location=href="regiest.html"'>Register a new account</button>
+            <button type="button" class="btn btn-danger" onclick="location.href='register.jsp'">Register a new account</button>
         </div>
     </form>
 <script>
-//给表单添加一个提交事件(可以尝试导入第三方插件:jQuery Validation),进行一个表单验证
+
     $("#myForm").submit(()=>{
     	if($("#id_username").val().length==0){
     		alert("account cannot be empty")
@@ -70,3 +69,5 @@
 </script>
 </body>
 </html>
+
+
